@@ -7,10 +7,11 @@ type Phone interface {
 }
 
 type NokiaPhone struct {
+	Keyboard string
 }
 
 func (nokiaPhone NokiaPhone) call() {
-	fmt.Println("I am Nokia,I can call you!")
+	fmt.Printf("I am Nokia,I can call you!%s", nokiaPhone.Keyboard)
 }
 
 type IPhone struct {
@@ -23,6 +24,7 @@ func (iPhone IPhone) call() {
 func main() {
 	var phone Phone
 	phone = new(NokiaPhone)
+	//phone.Keyboard = "s"
 	phone.call()
 
 	phone = new(IPhone)
